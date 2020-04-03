@@ -16,12 +16,11 @@ const Menu = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  background-color: #EEEEEE;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.20), 0 10px 10px rgba(0,0,0,0.20);
-}
+  background-color: #eeeeee;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
 `;
 
-const Menubar = () => {
+const Menubar = props => {
   const menus = [
     {
       title: "Javascript",
@@ -50,14 +49,20 @@ const Menubar = () => {
     }
   ];
 
-  return (
-    <Menu>
-      {menus.map(menu => (
-        // <MenuButton title={menu.title} icon={menu.icon} color={menu.color} />
-        <MenuButton {...menu} />
-      ))}
-    </Menu>
-  );
+  const renderMenu = menus => {
+    return menus.map((menu, index) => {
+      return (
+        <MenuButton
+          showPage={props.showPage}
+          key={index}
+          index={index}
+          {...menu}
+        />
+      );
+    });
+  };
+
+  return <Menu>{renderMenu(menus)}</Menu>;
 };
 
 export default Menubar;

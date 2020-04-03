@@ -29,7 +29,10 @@ const ButtonText = styled.div`
 
 const MenuButton = props => {
   return (
-    <ButtonStyle color={props.color}>
+    <ButtonStyle
+      onMouseOver={() => props.showPage(props.index)}
+      color={props.color}
+    >
       <Icon name={props.icon} />
       <ButtonText>{props.title}</ButtonText>
     </ButtonStyle>
