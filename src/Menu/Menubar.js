@@ -12,12 +12,12 @@ const Menu = styled.div`
   left: 50%;
   padding: 15px 30px;
   padding-bottom: 10px;
+  margin-bottom: 10px;
   transform: translateX(-50%);
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  background-color: #eeeeee;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  background-color: #f5f6fa;
+  /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
 `;
 
 const Menubar = props => {
