@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Icon } from "semantic-ui-react";
 import { FlexBox } from "../components/reusable/styles";
 
 const HomeContainer = styled.div`
+  position: relative;
   margin: 0 auto;
   width: 75%;
-  height: 65%;
+  height: 600px;
   background-color: #f5f6fa;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
   margin-top: 5%;
@@ -13,6 +15,7 @@ const HomeContainer = styled.div`
   .myPicture {
     display: block;
     width: 90%;
+    height: 70%;
     margin: 20px auto;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -48,6 +51,41 @@ const HomeContainer = styled.div`
   .data {
     font-weight: 500;
     color: rgba(0, 0, 0, 0.6);
+  }
+`;
+
+const IconBox = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #c8d6e5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  i {
+    font-size: 50px;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.5s;
+  }
+  .github:hover {
+    color: #a2a2a2;
+  }
+  .facebook:hover {
+    color: #4064ac;
+  }
+  .instagram:hover {
+    color: #524694;
+  }
+  .google:hover {
+    color: #0000f7;
+  }
+  .npm:hover {
+    color: #c53635;
   }
 `;
 
@@ -94,6 +132,13 @@ const Home = () => {
           </FlexBox>
         </div>
       </FlexBox>
+      <IconBox>
+        <Icon className="github" name="github" />
+        <Icon className="facebook" name="facebook" />
+        <Icon className="instagram" name="instagram" />
+        <Icon className="google" name="google" />
+        <Icon className="npm" name="npm" />
+      </IconBox>
     </HomeContainer>
   );
 };
